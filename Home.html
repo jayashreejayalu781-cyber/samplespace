@@ -28,6 +28,9 @@
         justify-content: space-between;
         padding: 0px 30px;
         align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 100;
       }
       .logo {
         width: 80px;
@@ -106,6 +109,56 @@
       .hero-sub-2 img {
         width: 700px;
       }
+      .main {
+        width: 100%;
+        height: 200vh;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+      }
+      .transparent,
+      .easyAccess,
+      .noInfo {
+        width: 100%;
+        height: auto;
+        border: none;
+        border-radius: 20px;
+        transition:
+          all 1s ease-in-out,
+          opacity 0.25s ease-in-out;
+        opacity: 0;
+        display: flex;
+        justify-content: space-between;
+      }
+      .transparent:hover,
+      .easyAccess:hover,
+      .noInfo:hover {
+        opacity: 1;
+        transition: translate(450px);
+      }
+      .text {
+        width: 50%;
+        height: auto;
+        border-radius: 20px;
+        padding: 10px;
+        font-size: 17px;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .img {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .img img {
+        width: 500px;
+        height: 400px;
+        border-radius: 20px;
+      }
     </style>
   </head>
   <body>
@@ -133,6 +186,60 @@
       </div>
       <div class="hero-sub-2">
         <img src="download.png" alt="" />
+      </div>
+    </div>
+    <div class="main">
+      <div class="transparent">
+        <div class="text">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi
+          ratione dolorem nulla ipsam, velit officia, quis animi, ut id maxime
+          quibusdam libero deleniti sapiente beatae nemo accusantium labore.
+          Inventore, repellat Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Possimus voluptatum, assumenda at repellat repellendus deleniti
+          placeat alias! Placeat iure cupiditate consequatur debitis delectus
+          eius repellat, vero amet. Praesentium, velit odio?Lorem ipsum dolor
+          sit, amet consectetur adipisicing elit. Reprehenderit quos sunt
+          consectetur. Magni molestiae sunt placeat, quam ducimus tempora
+          distinctio maiores dolorem eligendi consequatur, quas, officia illo
+          ipsam delectus nesciunt.
+        </div>
+        <div class="img">
+          <img src="download.jpg" alt="" />
+        </div>
+      </div>
+
+      <div class="easyAccess">
+        <div class="text">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint
+          sapiente, labore nemo repellat quod ullam? Molestias voluptas quaerat
+          quod atque excepturi, quibusdam vel sequi earum, commodi, sed
+          voluptatibus quas autem Lorem, ipsum dolor sit amet consectetur
+          adipisicing elit. Reprehenderit in aperiam nesciunt architecto? Sit
+          suscipit esse repudiandae neque quos incidunt error nemo itaque
+          tenetur consequuntur. Reiciendis repudiandae quo non quas Lorem ipsum
+          dolor sit amet, consectetur adipisicing elit. Placeat modi voluptates
+          sequi alias, aspernatur beatae atque, vel a aliquid, cupiditate
+          voluptate delectus soluta? Maiores dolorum, exercitationem distinctio
+          ab eius tenetur.
+        </div>
+        <div class="img">
+          <img src="download2.jpg" alt="" />
+        </div>
+      </div>
+
+      <div class="noInfo">
+        <div class="text">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque sunt,
+          ad dolorem corrupti tempore, perferendis eveniet accusantium
+          exercitationem veritatis, impedit illo et nihil aliquam temporibus ab
+          aliquid corporis exam Lorem ipsum, dolor sit amet consectetur
+          adipisicing elit. Nobis quidem minima autem nemo et ipsa mollitia
+          perspiciatis dolorem voluptate animi inventore natus eveniet modi, a
+          vel quas dolore qui quia lorem
+        </div>
+        <div class="img">
+          <img src="download3.jpg" alt="" />
+        </div>
       </div>
     </div>
     <script>
