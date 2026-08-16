@@ -113,7 +113,7 @@
       <div class="logo"></div>
       <div class="nav-sub-1">
         <ul>
-          <li>Home</li>
+          <li class="home">Home</li>
           <li>Mentors</li>
           <li>Universities</li>
         </ul>
@@ -126,19 +126,15 @@
         </ul>
       </div>
     </div>
-    <div class="hero">
-      <div class="hero-sub-1">
-        <h1>Find,Choose and Decide Your carrer</h1>
-        <button class="get-started">Get Started</button>
-      </div>
-      <div class="hero-sub-2">
-        <img src="download.png" alt="" />
-      </div>
-    </div>
+
     <script>
       let account = document.querySelector(".account");
       account.addEventListener("click", () => {
         window.location.href = "login.html";
+      });
+      let home = document.querySelector(".home");
+      home.addEventListener("click", () => {
+        window.location.href = "Home.html";
       });
     </script>
   </body>

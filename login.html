@@ -86,10 +86,44 @@
         color: white;
         padding: 15px;
         border-radius: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
       }
       .login-sub h2 {
         font-weight: 600;
         font-size: 30px;
+      }
+      .login-minor-sub-1 {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .login-minor-sub-1 input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 20px;
+      }
+      .login-button {
+        padding: 10px 20px;
+        background-color: white;
+        border: none;
+        border-radius: 10px;
+        transition: all 0.25s ease-in-out;
+      }
+      .login-button:hover {
+        transform: scale(1.05);
+      }
+      .login-minor-sub-2 {
+        display: flex;
+        justify-content: center;
+      }
+      .login-register {
+        display: flex;
+        justify-content: center;
+      }
+      .login-minor-sub-1 p {
+        margin-bottom: 10px;
       }
     </style>
   </head>
@@ -98,10 +132,9 @@
       <div class="logo"></div>
       <div class="nav-sub-1">
         <ul>
-          <li>Home</li>
+          <li class="home">Home</li>
           <li>Mentors</li>
           <li>Universities</li>
-          <li>About us</li>
         </ul>
       </div>
       <div class="nav-sub-2">
@@ -115,16 +148,34 @@
 
     <div class="login">
       <div class="login-sub">
-        <h2>Login, Experience Exciting Eeatures</h2>
-        <div class="username">
-          <p>Username</p>
-          <input type="text" placeholder="Enter your username" />
+        <h2>Login, Experience Exciting Features</h2>
+        <div class="login-minor-sub-1">
+          <div class="username">
+            <p>Username</p>
+            <input type="text" placeholder="Enter your username" />
+          </div>
+          <div class="password">
+            <p>password</p>
+            <input type="text" placeholder="Enter your password" />
+          </div>
         </div>
-        <div class="password">
-          <p>password</p>
-          <input type="text" placeholder="Enter your password" />
+        <div class="login-minor-sub-2">
+          <button class="login-button">Login</button>
+        </div>
+        <div class="login-register">
+          <p class="register">No account? Register now?</p>
         </div>
       </div>
     </div>
+    <script>
+      let register = document.querySelector(".register");
+      let home = document.querySelector(".home");
+      register.addEventListener("click", () => {
+        window.location.href = "register.html";
+      });
+      home.addEventListener("click", () => {
+        window.location.href = "Home.html";
+      });
+    </script>
   </body>
 </html>
