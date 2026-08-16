@@ -103,6 +103,7 @@
         width: 100%;
         padding: 10px;
         border-radius: 20px;
+        border: none;
       }
       .login-button {
         padding: 10px 20px;
@@ -140,7 +141,7 @@
       <div class="nav-sub-2">
         <ul>
           <li><i class="ri-search-line"></i></li>
-          <li><i class="ri-user-line"></i></li>
+          <li class="accounts"><i class="ri-user-line"></i></li>
           <li><i class="ri-global-line"></i></li>
         </ul>
       </div>
@@ -156,26 +157,32 @@
           </div>
           <div class="password">
             <p>password</p>
-            <input type="text" placeholder="Enter your password" />
+            <input type="password" placeholder="Enter your password" />
           </div>
         </div>
         <div class="login-minor-sub-2">
           <button class="login-button">Login</button>
         </div>
         <div class="login-register">
-          <p class="register">No account? Register now?</p>
+          <p class="register">No account? Register now!</p>
         </div>
       </div>
     </div>
     <script>
       let register = document.querySelector(".register");
       let home = document.querySelector(".home");
+      let loginButton = document.querySelector(".login-button");
+      let account = document.querySelector(".account");
       register.addEventListener("click", () => {
         window.location.href = "register.html";
       });
       home.addEventListener("click", () => {
         window.location.href = "Home.html";
       });
+      account.addEventListener("click", () => {
+        window.location.href = "Home.html";
+      });
+      loginButton.addEventListener("click", () => {});
     </script>
   </body>
 </html>
