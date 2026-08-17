@@ -151,13 +151,21 @@
       <div class="login-sub">
         <h2>Login, Experience Exciting Features</h2>
         <div class="login-minor-sub-1">
-          <div class="username">
+          <div>
             <p>Username</p>
-            <input type="text" placeholder="Enter your username" />
+            <input
+              type="text"
+              placeholder="Enter your username"
+              class="username"
+            />
           </div>
-          <div class="password">
+          <div>
             <p>password</p>
-            <input type="password" placeholder="Enter your password" />
+            <input
+              type="password"
+              placeholder="Enter your password"
+              class="password"
+            />
           </div>
         </div>
         <div class="login-minor-sub-2">
@@ -173,6 +181,8 @@
       let home = document.querySelector(".home");
       let loginButton = document.querySelector(".login-button");
       let account = document.querySelector(".account");
+      let username = document.querySelector(".username");
+      let password = document.querySelector(".password");
       register.addEventListener("click", () => {
         window.location.href = "register.html";
       });
@@ -180,7 +190,12 @@
         window.location.href = "Home.html";
       });
 
-      loginButton.addEventListener("click", () => {});
+      loginButton.addEventListener("click", () => {
+        let data = JSON.parse(localStorage.getItem(username.value));
+        if (username != "" && password != "" && data) {
+          console.log(data.username);
+        }
+      });
     </script>
   </body>
 </html>

@@ -216,9 +216,9 @@
         ) {
           function check(p) {
             localStorage.setItem(
-              fullname.value,
+              username.value,
               JSON.stringify({
-                username: username.value,
+                fullname: fullname.value,
                 password: password.value,
               }),
             );
@@ -226,7 +226,6 @@
           }
           check(() => {
             console.log(localStorage);
-            window.location.href = "Home.html";
           });
         } else {
           register.innerHTML = "Invalid Credentials";
