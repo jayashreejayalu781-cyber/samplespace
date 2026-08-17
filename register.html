@@ -81,7 +81,7 @@
       }
       .login-sub {
         width: 30%;
-        height: 90%;
+        height: 100%;
         background-color: black;
         color: white;
         padding: 15px;
@@ -156,9 +156,21 @@
       <div class="login-sub">
         <h2>Register Now!</h2>
         <div class="login-minor-sub-1">
-          <div class="username">
+          <div>
+            <p>Fullname</p>
+            <input
+              type="text"
+              placeholder="Enter your fullname"
+              class="fullname"
+            />
+          </div>
+          <div>
             <p>Username</p>
-            <input type="text" placeholder="Enter your username" />
+            <input
+              type="text"
+              placeholder="Enter your username"
+              class="username"
+            />
           </div>
           <div class="password">
             <p>password</p>
@@ -191,18 +203,31 @@
       let password = document.querySelector(".password-1");
       let repassword = document.querySelector(".password-2");
       let account = document.querySelector(".account");
+      let fullname = document.querySelector(".fullname");
       let correctCredentials = true;
       let getStarted = document.querySelector(".login-button");
       getStarted.addEventListener("click", () => {
         if (
+          fullname.value != "" &&
           username.value != "" &&
           password.value != "" &&
           repassword.value != "" &&
           password.value == repassword.value
         ) {
-          register.innerHTML = "Welcome User";
-          register.style.display = "block";
-          window.location.href = "Home.html";
+          function check(p) {
+            localStorage.setItem(
+              fullname.value,
+              JSON.stringify({
+                username: username.value,
+                password: password.value,
+              }),
+            );
+            p();
+          }
+          check(() => {
+            console.log(localStorage);
+            window.location.href = "Home.html";
+          });
         } else {
           register.innerHTML = "Invalid Credentials";
           register.style.display = "block";
