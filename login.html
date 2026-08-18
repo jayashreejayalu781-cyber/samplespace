@@ -126,6 +126,13 @@
       .login-minor-sub-1 p {
         margin-bottom: 10px;
       }
+      .login-warning {
+        display: flex;
+        justify-content: center;
+      }
+      .warning {
+        color: white;
+      }
     </style>
   </head>
   <body>
@@ -174,6 +181,9 @@
         <div class="login-register">
           <p class="register">No account? Register now!</p>
         </div>
+        <div class="login-warning">
+          <p class="warning"></p>
+        </div>
       </div>
     </div>
     <script>
@@ -183,6 +193,7 @@
       let account = document.querySelector(".account");
       let username = document.querySelector(".username");
       let password = document.querySelector(".password");
+      let warning = document.querySelector(".warning");
       register.addEventListener("click", () => {
         window.location.href = "register.html";
       });
@@ -191,9 +202,16 @@
       });
 
       loginButton.addEventListener("click", () => {
-        let data = JSON.parse(localStorage.getItem(username.value));
+        let data = localStorage.getItem(username.value.trim());
         if (username != "" && password != "" && data) {
-          console.log(data.username);
+          edata = JSON.parse(data);
+          if (edata.password === password.value.trim()) {
+            window.location.href = "Home.html";
+          } else {
+            warning.innerHTML = "Incorrect password";
+          }
+        } else {
+          warning.innerHTML = "Invalid credentials";
         }
       });
     </script>

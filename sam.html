@@ -7,10 +7,7 @@
   </head>
   <body>
     <script>
-      for (i = 0; i < localStorage.length; i++) {
-        let data = JSON.parse(localStorage.getItem(localStorage.key(i)));
-        console.log(data.username);
-      }
+      console.log(localStorage.getItem(localStorage.key(0)));
     </script>
   </body>
 </html>
